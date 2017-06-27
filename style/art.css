@@ -1,0 +1,27 @@
+li:nth-child(3)
+{color: red;
+    border: 15px double black;
+    border-bottom-color:  green;
+}
+li:nth-child(6)
+{color: blue;
+border: 15px dotted red;
+padding: 1px
+}
+li:nth-child(5)
+{color: green;
+border: 15px solid blueviolet;
+border-top-style: dashed; 
+}
+li:nth-child(9)
+{color: yellow;
+border: 15px double black;
+border-left-style: solid;
+border-right-style: solid;
+}
+li:nth-child(10)
+{color: pink;
+border: 15px dotted violet;
+border-top-style: double;
+border-bottom-style: solid;
+}
