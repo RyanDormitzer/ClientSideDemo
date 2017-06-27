@@ -1,1 +1,36 @@
-p {color: red}
+p {
+    color: red;
+}
+div{
+    background-color: green !important;
+}
+#id {
+    background-color: burlywood;
+}
+.class {
+    background-color: greenyellow;
+}
+div.note{
+    background-color: gold;
+}
+/* Child Elements*/
+div> p {
+    background-color: plum;
+}
+/*desendent*/
+div p{
+    
+}
+/* pseudo selectot*/
+table:hover{
+    background-color: fuchsia;
+}
+table:focus{
+
+}
+/* attribute
+element[attribute='value']
+*/
+div[class='note']{
+    color:yellow;
+}
