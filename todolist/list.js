@@ -15,6 +15,10 @@ obj.addEventListener('click', function(event)
     var dele = document.createElement('button');
     var un = document.createElement('button');
     todo.innerText=update.value;
+    del.innerText='Delete';
+    dele.innerText="Delete";
+    check.innerText='Done';
+    un.innerText="Undo";
     list.appendChild(todo);
     list.appendChild(del);
     list.appendChild(check);
