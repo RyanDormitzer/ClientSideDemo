@@ -1,16 +1,51 @@
 <html>
     <head>
-        <link rel="stylesheet" href="style/style.css">
+        <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="style.css">
     </head>
 <body>
-    <div>
-        <h2>Moonlight Diner</h2>
+    <div id = 'top' class="jumbotron">
+        <h1>Moonlight Diner</h1>
         <p>Welcome to the Moonlight Diner. </br>We have online ordering so take advantage of that and click on that menu 
              button to start ordering. </p>
-            <a href="menu.html">Menu</a>
     </div>
-    <a  href="cart.html">View Cart</a></br>
-    <a id="last" href="cart.html">View Last Cart</a></br>
+    <div id = 'menu' class = 'row'>
+        <div class = 'well col-md-6' id = 'menu'>
+               <h1>MENU</h1>
+            <div id='Apps'>
+        <h2>Appitizers</h2>
+        <ul>
+            <li id = "Nachos">Nachos $5.99</li> <button id="addN">Add to Cart</button>
+            <li id = 'Mot'>Motzeralla Sticks $5.00</li> <button id="addM">Add to Cart</button>
+        </ul>
+        </div>
+        <div id ='meals'>
+        <h2>Entres</h2>
+        <ul>
+            <li id ='burg'>Burger and Fries $8.99</li> <button id="addB">Add to Cart</button>
+            <li id ='tom'>Tomato Soup with Grilled Cheese $7.99</li> <button id="addT">Add to Cart</button>
+        </ul>
+    </div>
+    <div id='drinks'>
+        <h2>Drinks</h2>
+        <ul>
+            <li id ='soda'>Soda (Coke, Diet Coke, Sprite) $1.99 (free refills)</li> <button id="addS">Add to Cart</button>
+            <li id ='tea'>Iced Tea $2.00 (free refills)</li> <button id="addTe">Add to Cart</button>
+        </ul>
+    </div>
+    </div>
+    <div id = 'Scart' class = 'well col-md-6' id="total"><h2>Cart</h2>
+        <ul id='cart'>
+            
+        </ul>
+        
+        Total: <p id = 'tota'></p>
+        <button id = 'getT'>Update</button>
+    </div>
+
+        </div>
+    </div>
+   <!-- <a id="last" href="cart.html">View Last Cart</a></br> -->
     <script type="text/javascript" src="cart.js"></script>
 </body>
 </html>

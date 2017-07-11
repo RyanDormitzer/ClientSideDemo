@@ -3,6 +3,12 @@
     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
+    <div>
+        <h1>Moonlight Diner</h1>
+        <p>Welcome to the Moonlight Diner. </br>We have online ordering so take advantage of that and click on that menu 
+             button to start ordering. </p>
+    <div class = 'row'>
+        <div class ='well col-md-6'>
     <h1>MENU</h1>
     <div id='Apps'>
         <h2>Appitizers</h2>
@@ -25,7 +31,18 @@
             <li id ='tea'>Iced Tea $2.00 (free refills)</li> <button id="addTe">Add to Cart</button>
         </ul>
     </div>
-    <a href="cart.html">View Cart</a></br>
+    </div>
+    <div class = 'well col-md-4' id="total">Cart
+        <ul id='cart'>
+            
+        </ul>
+    </div>
+    <div>
+        Total: <p id = 'tota'></p>
+        <button id = 'getT'>Checkout</button>
+    </div>
+    </div>
+  <!--  <a id = 'last' href="cart.html">View Cart</a></br> -->
     <a href="main.html">Home</a>
     <script type="text/javascript" src='cart.js'></script>
 </body>

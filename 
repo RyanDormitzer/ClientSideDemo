@@ -1,0 +1,279 @@
+[1mdiff --git a/dinnerApp/cart.html b/dinnerApp/cart.html[m
+[1mindex a62b5fd..1acb1fa 100644[m
+[1m--- a/dinnerApp/cart.html[m
+[1m+++ b/dinnerApp/cart.html[m
+[36m@@ -9,7 +9,7 @@[m
+         </ul>[m
+     </div>[m
+     <a href="main.html">Home</a></br>[m
+[31m-    <a href="menu.html">Update Cart</a>[m
+[32m+[m[32m    <!--<a href="menu.html">Update Cart</a> -->[m
+     <script type="text/javascript" src="cart.js"></script>[m
+ </body>[m
+ </html>[m
+\ No newline at end of file[m
+[1mdiff --git a/dinnerApp/cart.js b/dinnerApp/cart.js[m
+[1mindex d1f33b2..1c2d30f 100644[m
+[1m--- a/dinnerApp/cart.js[m
+[1m+++ b/dinnerApp/cart.js[m
+[36m@@ -13,85 +13,105 @@[m [mvar addM = document.getElementById('addM');[m
+ var addB = document.getElementById('addB');[m
+ var addT = document.getElementById('addT');[m
+ var addS = document.getElementById('addS');[m
+[31m-var addTe = document.getElementById('addte');[m
+[32m+[m[32mvar addTe = document.getElementById('addTe');[m
+[32m+[m[32mvar tota = document.getElementById('tota');[m
+[32m+[m[32mvar getT = document.getElementById('getT');[m
+[32m+[m[32mvar del = document.createElement('button');[m
+[32m+[m[32mdel.innerText='Delete';[m
+ var Ocart = [];[m
+[31m-var NachP = 5.99;[m
+[31m-var MotP = 5.00;[m
+[31m-var burgP = 8.99;[m
+[31m-var tomP = 7.99;[m
+[31m-var sodaP = 1.99;[m
+[31m-var teaP = 2.00;[m
+ var cartT =[];[m
+[31m-var k = 0;[m
+ window.onload = function(){[m
+ [m
+[31m-function getTotal(total)[m
+[32m+[m[32m/*function getTotal(total)[m
+ {[m
+     for(var i=0; i < cartT.length; i++)[m
+     {[m
+[31m-        total = total + cartT[this[i]];[m
+[32m+[m[32m        total = total + cartT[i];[m
+     }[m
+     return(total);[m
+[31m-}[m
+[32m+[m[32m} */[m
+ [m
+ [m
+[31m-    var item = document.createElement('li');[m
+[32m+[m[41m   [m
+     addN.addEventListener('click', function(event)[m
+     {[m
+[31m-        item.innerText=addN.innerText;[m
+[31m-        cart.appeendChild(item)[m
+[31m-        push.cartT(5.00);[m
+[31m-        push.Ocart(addN.innerText);[m
+[31m-        k++;[m
+[31m-    })[m
+[32m+[m[32m        var item = document.createElement('li');[m
+[32m+[m[32m        item.innerText=Nach.innerText;[m
+[32m+[m[32m        cart.appendChild(item);[m
+[32m+[m[32m      //  cart.appendChild(del)[m
+[32m+[m[32m        cartT.push(5.99);[m
+[32m+[m[32m        Ocart.push(item.innerText);[m
+[32m+[m[32m    });[m
+     addM.addEventListener('click', function(event)[m
+     {[m
+[31m-        item.innerText=addM.innerText;[m
+[31m-        cart.appeendChild(item)[m
+[31m-        push.cartT(5.99);[m
+[31m-        push.Ocart(addM.innerText);[m
+[31m-        k++;[m
+[31m-    })[m
+[32m+[m[32m         var item = document.createElement('li');[m
+[32m+[m[32m        item.innerText=Mot.innerText;[m
+[32m+[m[32m        cart.appendChild(item);[m
+[32m+[m[32m       // cart.appendChild(del)[m
+[32m+[m[32m        cartT.push(5.00);[m
+[32m+[m[32m        Ocart.push(item.innerText);[m
+[32m+[m[32m    });[m
+     addB.addEventListener('click', function(event)[m
+     {[m
+[31m-        item.innerText=addB.innerText;[m
+[31m-        cart.appeendChild(item)[m
+[31m-        push.cartT(8.99);[m
+[31m-        push.Ocart(addB.innerText);[m
+[31m-        k++;[m
+[31m-    })[m
+[32m+[m[32m         var item = document.createElement('li');[m
+[32m+[m[32m        item.innerText=burg.innerText;[m
+[32m+[m[32m        cart.appendChild(item);[m
+[32m+[m[32m       // cart.appendChild(del)[m
+[32m+[m[32m        cartT.push(8.99);[m
+[32m+[m[32m        Ocart.push(item.innerText);[m
+[32m+[m[32m    });[m
+     addT.addEventListener('click', function(event)[m
+     {[m
+[31m-        item.innerText=addT.innerText;[m
+[31m-        cart.appeendChild(item)[m
+[31m-        push.cartT(7.99);[m
+[31m-        push.Ocart(addT.innerText);[m
+[31m-        k++;[m
+[31m-    })[m
+[32m+[m[32m         var item = document.createElement('li');[m
+[32m+[m[32m        item.innerText=tom.innerText;[m
+[32m+[m[32m        cart.appendChild(item);[m
+[32m+[m[32m      //  cart.appendChild(del)[m
+[32m+[m[32m        cartT.push(7.99);[m
+[32m+[m[32m        Ocart.push(item.innerText);[m
+[32m+[m[32m    });[m
+ addS.addEventListener('click', function(event)[m
+     {[m
+[31m-        item.innerText=addS.innerText;[m
+[31m-        cart.appeendChild(item)[m
+[31m-        push.cartT(1.99);[m
+[31m-        push.Ocart(addS.innerText);[m
+[31m-        k++;[m
+[31m-    })[m
+[32m+[m[32m         var item = document.createElement('li');[m
+[32m+[m[32m        item.innerText=soda.innerText;[m
+[32m+[m[32m        cart.appendChild(item);[m
+[32m+[m[32m       // cart.appendChild(del);[m
+[32m+[m[32m        cartT.push(1.99);[m
+[32m+[m[32m        Ocart.push(item.innerText);[m
+[32m+[m[32m    });[m
+     addTe.addEventListener('click', function(event)[m
+     {[m
+[31m-        item.innerText=addTe.innerText;[m
+[31m-        cart.appeendChild(item)[m
+[31m-        push.cartT(2.00);[m
+[31m-        push.Ocart(addTe.innerText);[m
+[31m-        k++;[m
+[31m-    })[m
+[31m-    getCart function(cart){[m
+[32m+[m[32m        var item = document.createElement('li');[m
+[32m+[m[32m        item.innerText=tea.innerText;[m
+[32m+[m[32m        cart.appendChild(item);[m
+[32m+[m[32m       // cart.appendChild(del)[m
+[32m+[m[32m        cartT.push(2.00);[m
+[32m+[m[32m        Ocart.push(item.innerText);[m
+[32m+[m[32m    });[m
+[32m+[m[32m /* getCart static function(){[m
+[32m+[m[32m        var item = document.createElement('li');[m
+ for(var i = 0; i < Ocart.length; i++)[m
+ {[m
+[31m-    cart.appeendChild(Ocart[this[i]]);[m
+[32m+[m[32m    item.innerText = Ocart[this[i]];[m
+[32m+[m[32m    cart.appeendChild(item);[m
+ }[m
+[32m+[m[32mreturn Ocart;[m
+[32m+[m[32m    }*/[m
+[32m+[m
+[32m+[m[32mgetT.addEventListener('click', function(event)[m
+[32m+[m[32m{[m
+[32m+[m[32m    total = 0;[m
+[32m+[m[32m    //getTotal();[m
+[32m+[m[32m    //[m
+[32m+[m[32m     for(var i=0; i < cartT.length; i++)[m
+[32m+[m[32m    {[m
+[32m+[m[32m        total = total + cartT[i];[m
+     }[m
+[31m-last.addEventListener('click',function(event){[m
+[31m-    getCart(last);[m
+[31m-})[m
+[32m+[m[32m    c.log(total);[m
+[32m+[m[32m    tota.innerText ='$' + total;[m
+[32m+[m[32m});[m
+[32m+[m[32m/*del.addEventListener('click', function(event)[m
+[32m+[m[32m{[m
+[32m+[m[32m    cart.removeChild(item);[m
+[32m+[m[32m})*/[m
+ }[m
+ [m
+[1mdiff --git a/dinnerApp/main.html b/dinnerApp/main.html[m
+[1mindex 777f01f..9007c98 100644[m
+[1m--- a/dinnerApp/main.html[m
+[1m+++ b/dinnerApp/main.html[m
+[36m@@ -1,16 +1,51 @@[m
+ <html>[m
+     <head>[m
+[31m-        <link rel="stylesheet" href="style/style.css">[m
+[32m+[m[32m        <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">[m
+[32m+[m[32m        <link rel="stylesheet" href="style.css">[m
+     </head>[m
+ <body>[m
+[31m-    <div>[m
+[31m-        <h2>Moonlight Diner</h2>[m
+[32m+[m[32m    <div id = 'top' class="jumbotron">[m
+[32m+[m[32m        <h1>Moonlight Diner</h1>[m
+         <p>Welcome to the Moonlight Diner. </br>We have online ordering so take advantage of that and click on that menu [m
+              button to start ordering. </p>[m
+[31m-            <a href="menu.html">Menu</a>[m
+     </div>[m
+[31m-    <a  href="cart.html">View Cart</a></br>[m
+[31m-    <a id="last" href="cart.html">View Last Cart</a></br>[m
+[32m+[m[32m    <div id = 'menu' class = 'row'>[m
+[32m+[m[32m        <div class = 'well col-md-6' id = 'menu'>[m
+[32m+[m[32m               <h1>MENU</h1>[m
+[32m+[m[32m            <div id='Apps'>[m
+[32m+[m[32m        <h2>Appitizers</h2>[m
+[32m+[m[32m        <ul>[m
+[32m+[m[32m            <li id = "Nachos">Nachos $5.99</li> <button id="addN">Add to Cart</button>[m
+[32m+[m[32m            <li id = 'Mot'>Motzeralla Sticks $5.00</li> <button id="addM">Add to Cart</button>[m
+[32m+[m[32m        </ul>[m
+[32m+[m[32m        </div>[m
+[32m+[m[32m        <div id ='meals'>[m
+[32m+[m[32m        <h2>Entres</h2>[m
+[32m+[m[32m        <ul>[m
+[32m+[m[32m            <li id ='burg'>Burger and Fries $8.99</li> <button id="addB">Add to Cart</button>[m
+[32m+[m[32m            <li id ='tom'>Tomato Soup with Grilled Cheese $7.99</li> <button id="addT">Add to Cart</button>[m
+[32m+[m[32m        </ul>[m
+[32m+[m[32m    </div>[m
+[32m+[m[32m    <div id='drinks'>[m
+[32m+[m[32m        <h2>Drinks</h2>[m
+[32m+[m[32m        <ul>[m
+[32m+[m[32m            <li id ='soda'>Soda (Coke, Diet Coke, Sprite) $1.99 (free refills)</li> <button id="addS">Add to Cart</button>[m
+[32m+[m[32m            <li id ='tea'>Iced Tea $2.00 (free refills)</li> <button id="addTe">Add to Cart</button>[m
+[32m+[m[32m        </ul>[m
+[32m+[m[32m    </div>[m
+[32m+[m[32m    </div>[m
+[32m+[m[32m    <div id = 'Scart' class = 'well col-md-6' id="total"><h2>Cart</h2>[m
+[32m+[m[32m        <ul id='cart'>[m
+[32m+[m[41m            [m
+[32m+[m[32m        </ul>[m
+[32m+[m[41m        [m
+[32m+[m[32m        Total: <p id = 'tota'></p>[m
+[32m+[m[32m        <button id = 'getT'>Update</button>[m
+[32m+[m[32m    </div>[m
+[32m+[m
+[32m+[m[32m        </div>[m
+[32m+[m[32m    </div>[m
+[32m+[m[32m   <!-- <a id="last" href="cart.html">View Last Cart</a></br> -->[m
+     <script type="text/javascript" src="cart.js"></script>[m
+ </body>[m
+ </html>[m
+[1mdiff --git a/dinnerApp/menu.html b/dinnerApp/menu.html[m
+[1mindex 62a4648..39c1a85 100644[m
+[1m--- a/dinnerApp/menu.html[m
+[1m+++ b/dinnerApp/menu.html[m
+[36m@@ -3,6 +3,12 @@[m
+     <link rel="stylesheet" href="style/style.css">[m
+ </head>[m
+ <body>[m
+[32m+[m[32m    <div>[m
+[32m+[m[32m        <h1>Moonlight Diner</h1>[m
+[32m+[m[32m        <p>Welcome to the Moonlight Diner. </br>We have online ordering so take advantage of that and click on that menu[m[41m [m
+[32m+[m[32m             button to start ordering. </p>[m
+[32m+[m[32m    <div class = 'row'>[m
+[32m+[m[32m        <div class ='well col-md-6'>[m
+     <h1>MENU</h1>[m
+     <div id='Apps'>[m
+         <h2>Appitizers</h2>[m
+[36m@@ -25,7 +31,18 @@[m
+             <li id ='tea'>Iced Tea $2.00 (free refills)</li> <button id="addTe">Add to Cart</button>[m
+         </ul>[m
+     </div>[m
+[31m-    <a href="cart.html">View Cart</a></br>[m
+[32m+[m[32m    </div>[m
+[32m+[m[32m    <div class = 'well col-md-4' id="total">Cart[m
+[32m+[m[32m        <ul id='cart'>[m
+[32m+[m[41m            [m
+[32m+[m[32m        </ul>[m
+[32m+[m[32m    </div>[m
+[32m+[m[32m    <div>[m
+[32m+[m[32m        Total: <p id = 'tota'></p>[m
+[32m+[m[32m        <button id = 'getT'>Checkout</button>[m
+[32m+[m[32m    </div>[m
+[32m+[m[32m    </div>[m
+[32m+[m[32m  <!--  <a id = 'last' href="cart.html">View Cart</a></br> -->[m
+     <a href="main.html">Home</a>[m
+     <script type="text/javascript" src='cart.js'></script>[m
+ </body>[m
+[1mdiff --git a/dinnerApp/style/style.css b/dinnerApp/style/style.css[m
+[1mdeleted file mode 100644[m
+[1mindex e69de29..0000000[m

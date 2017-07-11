@@ -1,0 +1,18 @@
+#top{
+    background-image: url('moonlight.jpg');
+    
+    color:red;
+}
+#menu{
+    background-image: url('stars.jpg');
+    color: darkred;
+}
+#Scart{
+    background-image: url('stars.jpg')
+}
+body{
+    background-color: darkblue;
+}
+button{
+    
+}
